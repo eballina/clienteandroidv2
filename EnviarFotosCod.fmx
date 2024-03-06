@@ -1,0 +1,90 @@
+object frmEnviarFotos: TfrmEnviarFotos
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 476
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 3
+  object ListView1: TListView
+    ItemAppearanceClassName = 'TImageListItemAppearance'
+    ItemEditAppearanceClassName = 'TImageListItemShowCheck'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Client
+    Size.Width = 476.000000000000000000
+    Size.Height = 432.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    ItemAppearanceObjects.ItemObjects.Text.Width = 204.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Text.Height = 73.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Image.Width = 90.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Image.Height = 143.000000000000000000
+  end
+  object ToolBar1: TToolBar
+    Size.Width = 476.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    object Button1: TButton
+      Align = FitLeft
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'priortoolbutton'
+      TabOrder = 5
+      Text = 'Button1'
+      TextSettings.Trimming = None
+      OnClick = Button1Click
+    end
+    object Label1: TLabel
+      Align = FitLeft
+      Position.X = 48.000000000000000000
+      Position.Y = 13.659663200378420000
+      Size.Width = 428.000000000000000000
+      Size.Height = 20.680671691894530000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      TextSettings.Trimming = None
+      Text = 'Label1'
+      TabOrder = 0
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = Datoscentrales.tbUsuarios
+    ScopeMappings = <>
+    Left = 224
+    Top = 224
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 52
+    Top = 189
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'descripcion'
+      Control = ListView1
+      FillExpressions = <
+        item
+          SourceMemberName = 'IMAGEN'
+          ControlMemberName = 'Bitmap'
+        end>
+      FillHeaderExpressions = <>
+      FillHeaderFieldName = 'NOMBREDELSITIO'
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = Datoscentrales.tbFotos
+    ScopeMappings = <>
+    Left = 232
+    Top = 232
+  end
+end

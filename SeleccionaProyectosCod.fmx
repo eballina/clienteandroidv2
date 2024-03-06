@@ -1,0 +1,217 @@
+﻿object frmSeleccionaProyecto: TfrmSeleccionaProyecto
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 508
+  ClientWidth = 492
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object ToolBar1: TToolBar
+    Size.Width = 492.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Button1: TButton
+      Align = FitLeft
+      Size.Width = 145.454574584960900000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 0
+      Text = 'Cerrar'
+      TextSettings.Trimming = None
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Action = AcciónAbreCamarita
+      Align = FitRight
+      Images = Datoscentrales.Imágenes
+      ImageIndex = 1
+      Position.X = 368.000000000000000000
+      Size.Width = 124.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'cameratoolbuttonbordered'
+      TabOrder = 1
+      TextSettings.Trimming = None
+    end
+  end
+  object GridPanelLayout1: TGridPanelLayout
+    Align = Center
+    Size.Width = 316.000000000000000000
+    Size.Height = 340.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ColumnCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = labelProyecto
+        Row = 1
+      end
+      item
+        Column = 0
+        Control = labelLugar
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = labelConcepto
+        Row = 2
+      end>
+    RowCollection = <
+      item
+        Value = 33.383496462225110000
+      end
+      item
+        Value = 33.000000000000000000
+      end
+      item
+        Value = 33.616508966136440000
+      end>
+    object labelProyecto: TLabel
+      Anchors = []
+      Position.X = 50.000000000000000000
+      Position.Y = 149.603881835937500000
+      Size.Width = 216.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Trimming = None
+      Text = 'Proyecto'
+      TabOrder = 0
+      object comboProyecto: TComboBox
+        Position.X = 72.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 136.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+      end
+    end
+    object labelLugar: TLabel
+      Anchors = []
+      Position.X = 44.500000000000000000
+      Position.Y = 40.251945495605470000
+      Size.Width = 227.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Trimming = None
+      Text = 'Ubicaci'#243'n'
+      TabOrder = 1
+      object comboLugar: TComboBox
+        Position.X = 77.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 132.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+      end
+    end
+    object labelConcepto: TLabel
+      Anchors = []
+      Position.X = 58.000000000000000000
+      Position.Y = 267.351928710937500000
+      Size.Width = 200.000000000000000000
+      Size.Height = 31.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Trimming = None
+      Text = 'Concepto'
+      TabOrder = 2
+      object comboConcepto: TComboBox
+        Position.X = 64.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+      end
+    end
+  end
+  object Panel1: TPanel
+    Align = Bottom
+    Position.Y = 444.000000000000000000
+    Size.Width = 492.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object Button3: TButton
+      Align = Center
+      Size.Width = 197.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Button3'
+      TextSettings.Trimming = None
+    end
+  end
+  object ActionList1: TActionList
+    Images = Datoscentrales.Imágenes
+    Left = 360
+    Top = 424
+    object AcciónAbreCamarita: TAction
+      Text = 'Acci'#243'nAbreCamarita'
+      ImageIndex = 1
+      OnExecute = AcciónAbreCamaritaExecute
+      ImageIndex = 1
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = Datoscentrales.tbProyectos
+    ScopeMappings = <>
+    Left = 184
+    Top = 424
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'NOMBREDELSITIO'
+      Control = comboLugar
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkListControlToField2: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB3
+      FieldName = 'DESCRIPCIONDELAETAPA'
+      Control = comboConcepto
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkListControlToField3: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'DESCRIPCION'
+      Control = comboProyecto
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = Datoscentrales.tbSitios
+    ScopeMappings = <>
+    Left = 232
+    Top = 240
+  end
+  object BindSourceDB3: TBindSourceDB
+    DataSet = Datoscentrales.tbConceptos
+    ScopeMappings = <>
+    Left = 240
+    Top = 248
+  end
+end

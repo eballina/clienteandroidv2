@@ -1,0 +1,300 @@
+﻿object frmTomadefotos: TfrmTomadefotos
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 600
+  ClientWidth = 480
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 3
+  object ToolBar1: TToolBar
+    Size.Width = 480.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Button1: TButton
+      Align = FitLeft
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 0
+      Text = 'Atr'#225's'
+      TextSettings.Trimming = None
+      OnClick = Button1Click
+    end
+    object CornerButton1: TCornerButton
+      Action = PreviousTabAction1
+      Align = FitLeft
+      ControlType = Platform
+      Images = Datoscentrales.Imágenes
+      ImageIndex = -1
+      Margins.Left = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Position.X = 53.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 124.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+    end
+    object CornerButton2: TCornerButton
+      Action = NextTabAction1
+      Align = FitLeft
+      ControlType = Platform
+      Images = Datoscentrales.Imágenes
+      ImageIndex = -1
+      Margins.Left = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Position.X = 187.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 142.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+    end
+    object botóncomentarios: TCornerButton
+      Align = FitLeft
+      ControlType = Platform
+      Images = Datoscentrales.Imágenes
+      Margins.Left = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Position.X = 339.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 126.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Comentarios'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+    end
+  end
+  object Páginas: TTabControl
+    Align = Client
+    Size.Width = 480.000000000000000000
+    Size.Height = 552.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'tabcontrolstyle'
+    TabHeight = 49.000000000000000000
+    TabIndex = 2
+    TabOrder = 1
+    TabPosition = None
+    OnChange = PáginasChange
+    Sizes = (
+      480s
+      552s
+      480s
+      552s)
+    object tabProyectos: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tabProyectos'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ComboBox1: TComboBox
+        Position.X = 104.000000000000000000
+        Position.Y = 96.000000000000000000
+        Size.Width = 185.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+      end
+    end
+    object tabFotografías: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tabFotograf'#237'as'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object fotito: TImageControl
+        Align = Client
+        Size.Width = 480.000000000000000000
+        Size.Height = 504.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'imagecontrolstyle'
+        TabOrder = 0
+      end
+      object ToolBar2: TToolBar
+        Align = MostBottom
+        Position.Y = 504.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object BotónFotos: TButton
+          Action = TomaFoto
+          Align = FitLeft
+          Images = Datoscentrales.Imágenes
+          ImageIndex = 1
+          Margins.Left = 45.000000000000000000
+          Margins.Right = 45.000000000000000000
+          Margins.Bottom = 15.000000000000000000
+          Position.X = 45.000000000000000000
+          Size.Width = 132.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Fotografar'
+          TextSettings.Trimming = None
+        end
+      end
+    end
+  end
+  object Camarita: TCameraComponent
+    Left = 421
+    Top = 109
+  end
+  object MiraConfirmación: TMultiView
+    TargetControl = Páginas
+    MasterButton = botóncomentarios
+    Mode = Drawer
+    NavigationPaneOptions.CollapsedWidth = 10.000000000000000000
+    Size.Width = 281.000000000000000000
+    Size.Height = 552.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object Memo1: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Top
+      ControlType = Platform
+      Size.Width = 281.000000000000000000
+      Size.Height = 297.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 273.000000000000000000
+      Viewport.Height = 289.000000000000000000
+    end
+    object ToolBar3: TToolBar
+      ControlType = Platform
+      Position.Y = 297.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toolbarstyle'
+      TabOrder = 1
+      object SpeedButton1: TSpeedButton
+        Align = FitLeft
+        Size.Width = 137.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'SpeedButton1'
+        TextSettings.Trimming = None
+      end
+      object SpeedButton2: TSpeedButton
+        Align = FitRight
+        Position.X = 160.000000000000000000
+        Size.Width = 121.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'SpeedButton2'
+        TextSettings.Trimming = None
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = Datoscentrales.Imágenes
+    OnUpdate = ActionList1Update
+    Left = 357
+    Top = 165
+    object SeleccionaProyectos: TAction
+      Text = 'Proyectos'
+      ImageIndex = 4
+      ImageIndex = 4
+    end
+    object SeleccionaFotografiar: TAction
+      Text = 'Fotos'
+      ImageIndex = 1
+      OnExecute = SeleccionaFotografiarExecute
+      ImageIndex = 1
+    end
+    object SeleccionaComentarios: TAction
+      Text = 'Comentarios'
+    end
+    object TomaFoto: TTakePhotoFromCameraAction
+      Category = 'Media Library'
+      ImageIndex = 1
+      OnDidFinishTaking = TomaFotoDidFinishTaking
+      ImageIndex = 1
+    end
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = Páginas
+      CustomText = 'Adelante'
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = Páginas
+      CustomText = 'Atr'#225's'
+    end
+    object insertalafoto: TAction
+      Text = 'Grabar'
+      OnExecute = insertalafotoExecute
+    end
+    object Cancelafoto: TAction
+      Text = 'Cancelar'
+      OnExecute = CancelafotoExecute
+    end
+  end
+  object Localizador: TLocationSensor
+    ActivityType = Other
+    UsageAuthorization = WhenInUse
+    Left = 349
+    Top = 109
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = Datoscentrales.tbProyectos
+    ScopeMappings = <>
+    Left = 224
+    Top = 288
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'DESCRIPCION'
+      Control = ComboBox1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end
